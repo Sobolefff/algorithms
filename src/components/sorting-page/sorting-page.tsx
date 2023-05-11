@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { RadioInput } from "../ui/radio-input/radio-input";
 import { Button } from "../ui/button/button";
 import { Column } from "../ui/column/column";
@@ -161,6 +161,10 @@ export const SortingPage: React.FC = () => {
       sortDescendingBubble(arr, setArr, setLoader);
     }
   };
+
+  useEffect(() => {
+    addNewArr();
+  }, []);
 
   return (
     <SolutionLayout title="Сортировка массива">

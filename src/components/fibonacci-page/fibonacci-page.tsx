@@ -42,6 +42,7 @@ export const FibonacciPage: React.FC = () => {
             max={MAX_NUM_FIB}
             min={MIN_NUM_FIB}
             onChange={onInputChange}
+            placeholder='Введите число'
           />
           <div className={styles.button}>
             <Button

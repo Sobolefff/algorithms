@@ -349,7 +349,7 @@ export const ListPage: React.FC = () => {
           <Input
             data-testid="indexinput"
             placeholder="Введите индекс"
-            type="text"
+            type="number"
             value={indexValue}
             onChange={onIndexChange}
           />

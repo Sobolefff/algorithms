@@ -14,6 +14,7 @@ export const StackPage: React.FC = () => {
   const [arr, setArr] = useState<TStackItem[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [stack] = useState(new Stack<TStackItem>());
+  const [loader, setLoader] = useState(false);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -21,6 +22,7 @@ export const StackPage: React.FC = () => {
 
   const handleAddNumber = async () => {
     if (inputValue) {
+      setLoader(true);
       stack.push({ value: inputValue, color: ElementStates.Changing });
       setInputValue("");
       setArr([...stack.getElements()]);
@@ -28,6 +30,7 @@ export const StackPage: React.FC = () => {
       stack.peek().color = ElementStates.Default;
       setArr([...stack.getElements()]);
     }
+    setLoader(false);
   };
 
   const handleDeleteNumber = async () => {
@@ -66,6 +69,7 @@ export const StackPage: React.FC = () => {
           text="Добавить"
           onClick={handleAddNumber}
           disabled={inputValue === ""}
+          isLoader={loader}
         />
         <Button
           data-testid="deletebutton"
