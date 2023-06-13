@@ -260,7 +260,7 @@ describe('Страница Связный список отображается 
         cy.get('[data-testid=indexinput]').should('be.empty');
         cy.get('[data-testid=indexinput]').type(`${index}`);
 
-        cy.get('indexAddBtn').click();
+        cy.get(indexAddBtn).click();
 
         cy.get(topCircle);
 
