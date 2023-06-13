@@ -1,19 +1,5 @@
 import { DELAY_SHORT } from '../../src/utils/constants';
-import {
-    circle,
-    circles,
-    head,
-    headAddBtn,
-    indexAddBtn,
-    indexDelBtn,
-    tail,
-    tailAddBtn,
-    indexInput,
-    valueInput,
-    topCircle,
-    circleItem,
-    arrow,
-} from './constants';
+import { arrow, circle, circleItem, circles, head, headAddBtn, indexAddBtn, indexDelBtn, indexInput, tail, tailAddBtn, topCircle, valueInput } from './constants';
 import { url, COLOR_DEFAULT, COLOR_CHANGING, COLOR_MODIFIED } from './utils';
 
 describe('Страница Связный список отображается корректно', function () {
@@ -61,14 +47,16 @@ describe('Страница Связный список отображается 
             }
         });
 
-        cy.get(indexInput).each(($el: keyof HTMLElementTagNameMap, index, $list) => {
-            cy.get($el).should('contain', index);
-        });
+        cy.get(indexInput).each(
+            ($el: keyof HTMLElementTagNameMap, index, $list) => {
+                cy.get($el).should('contain', index);
+            }
+        );
     });
 
     it('Элемент добавляется в список', function () {
-        cy.get(indexInput).should('be.empty');
-        cy.get(indexInput).type(`${value}`);
+        cy.get(valueInput).should('be.empty');
+        cy.get(valueInput).type(`${value}`);
 
         cy.get(headAddBtn).click();
 
@@ -116,9 +104,11 @@ describe('Страница Связный список отображается 
             }
         });
 
-        cy.get(indexInput).each(($el: keyof HTMLElementTagNameMap, index, $list) => {
-            cy.get($el).should('contain', index);
-        });
+        cy.get(indexInput).each(
+            ($el: keyof HTMLElementTagNameMap, index, $list) => {
+                cy.get($el).should('contain', index);
+            }
+        );
     });
 
     it('Элемент добавляется в tail', function () {
@@ -171,9 +161,11 @@ describe('Страница Связный список отображается 
             }
         });
 
-        cy.get(indexInput).each(($el: keyof HTMLElementTagNameMap, index, $list) => {
-            cy.get($el).should('contain', index);
-        });
+        cy.get(indexInput).each(
+            ($el: keyof HTMLElementTagNameMap, index, $list) => {
+                cy.get($el).should('contain', index);
+            }
+        );
     });
 
     it('Элемент удаляется из head', function () {
@@ -209,9 +201,11 @@ describe('Страница Связный список отображается 
             }
         });
 
-        cy.get(indexInput).each(($el: keyof HTMLElementTagNameMap, index, $list) => {
-            cy.get($el).should('contain', index);
-        });
+        cy.get(indexInput).each(
+            ($el: keyof HTMLElementTagNameMap, index, $list) => {
+                cy.get($el).should('contain', index);
+            }
+        );
     });
 
     it('Элемент удаляется из tail', function () {
@@ -248,9 +242,11 @@ describe('Страница Связный список отображается 
             }
         });
 
-        cy.get(indexInput).each(($el: keyof HTMLElementTagNameMap, index, $list) => {
-            cy.get($el).should('contain', index);
-        });
+        cy.get(indexInput).each(
+            ($el: keyof HTMLElementTagNameMap, index, $list) => {
+                cy.get($el).should('contain', index);
+            }
+        );
     });
 
     it('Элемент добавляется по индексу', function () {
@@ -333,9 +329,11 @@ describe('Страница Связный список отображается 
             }
         });
 
-        cy.get(indexInput).each(($el: keyof HTMLElementTagNameMap, index, $list) => {
-            cy.get($el).should('contain', index);
-        });
+        cy.get(indexInput).each(
+            ($el: keyof HTMLElementTagNameMap, index, $list) => {
+                cy.get($el).should('contain', index);
+            }
+        );
     });
 
     it('Элемент удаляется по индексу', function () {
@@ -408,8 +406,10 @@ describe('Страница Связный список отображается 
             }
         });
 
-        cy.get(indexInput).each(($el: keyof HTMLElementTagNameMap, index, $list) => {
-            cy.get($el).should('contain', index);
-        });
+        cy.get(indexInput).each(
+            ($el: keyof HTMLElementTagNameMap, index, $list) => {
+                cy.get($el).should('contain', index);
+            }
+        );
     });
 });
